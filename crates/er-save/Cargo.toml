@@ -1,0 +1,23 @@
+[package]
+name = "er-save"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Read and edit Elden Ring PC saves (.sl2 / .co2)"
+
+[dependencies]
+aes.workspace = true
+cbc.workspace = true
+cipher.workspace = true
+md-5.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+sha2.workspace = true
+hex.workspace = true
+
+[features]
+private-fixtures = []

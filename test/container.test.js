@@ -1,0 +1,2 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const path=require('node:path');
+test('release source contains no bundled game icons or personal saves',()=>{const root=path.join(__dirname,'..');assert.equal(fs.existsSync(path.join(root,'public/icons')),false);assert.equal(fs.existsSync(path.join(root,'Save')),false);const p=require('../public/data/itemParams.json');for(const rows of Object.values(p))for(const row of rows)assert.equal(Object.hasOwn(row,'name'),false);});
