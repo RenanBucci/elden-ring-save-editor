@@ -5,14 +5,14 @@
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/check-icons.cjs && vite build && node scripts/check-icons.cjs dist/icons",
     "lint": "eslint .",
     "test": "node --test test/*.test.js",
     "test:ui": "electron test/ui.electron.cjs",
     "tauri:dev": "tauri dev",
     "tauri:build": "tauri build",
-    "extract:icons": "node tools/extract-icons.cjs",
-    "check:release": "node tools/check-release.cjs"
+    "check:release": "node tools/check-release.cjs",
+    "icons:optimize": "node scripts/optimize-icons.cjs"
   },
   "dependencies": {
     "fzstd": "^0.1.1",

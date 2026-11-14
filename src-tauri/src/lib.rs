@@ -1060,3 +1060,17 @@ pub fn run() {
         .run(tauri::generate_context!())
         .expect("erro ao abrir o Elden Ring Save Editor");
 }
+
+#[cfg(all(test, feature = "custom-protocol"))]
+mod bundled_assets_tests {
+    #[test]
+    fn every_manifest_icon_is_embedded_in_the_native_application() {
+        let context: tauri::Context<tauri::Wry> = tauri::generate_context!();
+        let manifest: serde_json::Value = serde_json::from_str(include_str!("../../src/icon-manifest.json")).unwrap();
+        for file in manifest["files"].as_object().unwrap().keys() {
+            let key = format!("/icons/{file}");
+            let bytes = context.assets().get(&key.into()).unwrap_or_else(|| panic!("Missing embedded icon: {file}"));
+            assert!(bytes.starts_with(b"\x89PNG\r\n\x1a\n"), "Invalid embedded PNG: {file}");
+        }
+    }
+}

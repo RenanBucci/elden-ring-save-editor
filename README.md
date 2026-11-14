@@ -36,19 +36,11 @@ Internal empty-equipment records are hidden. Items equipped by a character are p
 
 ## Local game data and icons
 
-No personal saves, game DLLs, wallpapers, extracted icon images or raw game archives are included. The app uses numeric item metadata and reads localized names and world-map data from your own game installation. The initial catalog build can take several minutes. Without accessible game data, some names use a category/ID fallback and the world view can use a schematic map.
+Item icons are included in the Windows executable and installer. All 3,064 PNGs are bundled; no icon extraction, game-file build step or separate cache is required. Ashes of War include 116 numeric icon mappings. PNG optimization preserves every RGBA pixel.
 
-Steam libraries are detected automatically. For a nonstandard installation, set `ER_GAME_DIR` to the directory containing `regulation.bin` before launching the app.
+Localized item names and world-map data still come from your installed game. Without accessible game data, names may use category/ID fallbacks. Personal saves, game DLLs and raw game archives are not included.
 
-Item images are **optional**. Without a local icon cache, the UI displays a neutral placeholder; editing does not depend on the images. Developers can extract images from their own installation:
-
-```powershell
-npm ci
-$env:ER_GAME_DIR = 'D:\SteamLibrary\steamapps\common\ELDEN RING\Game'
-npm run extract:icons
-```
-
-This stores images under `%LOCALAPPDATA%\EldenRingSaveEditor\cache\icons`. Restart the editor after extraction. Packed archives and the game's own Oodle library may be needed. Do not redistribute the generated cache or the game's DLLs.
+The build verifies the icon manifest before and after Vite packaging and refuses missing or altered files. The Tauri custom-protocol feature embeds the frontend assets in the executable.
 
 ## Build from source
 

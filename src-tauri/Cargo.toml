@@ -23,5 +23,6 @@ tauri-plugin-opener = "2"
 sysinfo = "0.30"
 
 [features]
+custom-protocol = ["tauri/custom-protocol"]
 private-fixtures = []
 

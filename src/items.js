@@ -70,7 +70,7 @@ export function buildItemData(params, rows, lang = 'pt-BR') {
     const names = new Map();
     const dlc = new Set();
     const affinities = new Map();
-    for (const [kind, key] of [['weapon', 'weapons'], ['armor', 'armor'], ['talisman', 'accessories'], ['goods', 'goods']]) {
+    for (const [kind, key] of [['weapon', 'weapons'], ['armor', 'armor'], ['talisman', 'accessories'], ['goods', 'goods'], ['ash', 'gems']]) {
         for (const item of params?.[key] || []) {
             meta.set(`${kind}:${item.paramId}`, item);
             if (item.name && lang !== 'en') names.set(`${kind}:${item.paramId}`, item.name);
@@ -122,7 +122,7 @@ export function buildItemData(params, rows, lang = 'pt-BR') {
     for (const item of params?.armor || []) push('armor', item.paramId, item);
     for (const item of params?.accessories || []) push('talisman', item.paramId, item);
     for (const item of params?.goods || []) if (item.paramId < 9000 || item.paramId >= 10000) push('goods', item.paramId, item);
-    for (const [rawKind, id] of rows || []) if (rawKind === 'gem' && id >= 10000) push('ash', id, null);
+    for (const [rawKind, id] of rows || []) if (rawKind === 'gem' && id >= 10000) push('ash', id, meta.get(`ash:${id}`));
 
     for (const entry of catalog) {
         if (entry.category !== 'spirit') continue;

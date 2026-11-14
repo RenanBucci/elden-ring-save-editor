@@ -1,3 +1,10 @@
+# v1.0.0-beta.2 — Bundled item icons
+
+- Embed 3,064 icons in the Windows app; no manual extraction.
+- Include icon metadata for 116 Ashes of War.
+- Optimize PNGs without pixel loss and validate every icon during build.
+- Enable Tauri custom-protocol assets for distribution.
+
 # Changelog
 
 ## 1.0.0 public preview
