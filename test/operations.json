@@ -1,0 +1,75 @@
+[
+  {
+    "id": "set_runes",
+    "category": "Runes",
+    "risk": "safe",
+    "supportsAmount": true,
+    "amountMax": 999999999,
+    "amountDefault": 999999999,
+    "name": "Definir runas",
+    "description": "Altera as runas que o personagem carrega agora."
+  },
+  {
+    "id": "fill_materials",
+    "category": "Materials",
+    "risk": "safe",
+    "name": "Encher materiais",
+    "description": "Sobe ao limite os materiais de craft que você já tem."
+  },
+  {
+    "id": "fill_stones",
+    "category": "Materials",
+    "risk": "safe",
+    "name": "Encher pedras de forja",
+    "description": "Completa pedras de forja e de fortalecimento de espírito já obtidas."
+  },
+  {
+    "id": "unlock_sorceries",
+    "category": "Collections",
+    "risk": "moderate",
+    "name": "Adicionar feitiçarias",
+    "description": "Coloca as feitiçarias do catálogo (tipo 5). Itens cortados podem marcar a conta online."
+  },
+  {
+    "id": "unlock_ashes",
+    "category": "Collections",
+    "risk": "moderate",
+    "name": "Adicionar cinzas de guerra",
+    "description": "Adiciona as cinzas de guerra conhecidas pelo catálogo."
+  },
+  {
+    "id": "fix_level",
+    "category": "Character",
+    "risk": "safe",
+    "name": "Corrigir nível",
+    "description": "Regrava o nível para bater com a soma dos atributos (soma − 79)."
+  },
+  {
+    "id": "max_blessings",
+    "category": "Character",
+    "risk": "moderate",
+    "name": "Bênçãos no máximo",
+    "description": "Sobe a bênção da Árvore Umbral e a bênção do Reino das Sombras."
+  },
+  {
+    "id": "unlock_graces",
+    "category": "World",
+    "risk": "moderate",
+    "name": "Ativar todas as Graças",
+    "description": "Marca as Graças conhecidas como descobertas."
+  },
+  {
+    "id": "unlock_maps",
+    "category": "World",
+    "risk": "moderate",
+    "name": "Revelar fragmentos de mapa",
+    "description": "Marca os fragmentos de mapa listados."
+  },
+  {
+    "id": "unlock_bosses",
+    "category": "World",
+    "risk": "moderate",
+    "name": "Marcar chefes derrotados",
+    "description": "Liga as flags de chefe conhecidas. Algumas têm flags extras e podem não completar a missão."
+  }
+]

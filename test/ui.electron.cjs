@@ -10,7 +10,7 @@ fs.mkdirSync(path.join(root, 'qa'), {recursive:true});
 app.setPath('userData', fs.mkdtempSync(path.join(root, 'qa', 'renderer-')));
 const params = require('../public/data/itemParams.json');
 const world = require('../data/world.json');
-const ops = require('./fixtures/operations.json');
+const ops = require('./operations.json');
 const report = [];
 const errors = [];
 let activeFile = 'fixture-a.sl2';

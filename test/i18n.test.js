@@ -34,7 +34,7 @@ test('all literal UI translation calls and operation descriptions have English e
             },
         });
     }
-    for(const operation of require('./fixtures/operations.json')) {
+    for(const operation of require('./operations.json')) {
         assert.ok(messages[operation.name], operation.name);
         assert.ok(messages[operation.description], operation.description);
     }
